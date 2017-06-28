@@ -19,6 +19,8 @@ public class JsonAdapter {
 		System.out.println("Creating a bucket on Google Cloud Storage...");
 		if (args.length > 0) {
 			createBucket(args[0]);
+		} else {
+			createBucket("saikat3");
 		}
 
 		try {
