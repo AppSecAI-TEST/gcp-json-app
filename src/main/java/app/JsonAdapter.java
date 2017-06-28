@@ -15,9 +15,11 @@ public class JsonAdapter {
 	public static String TEST_XML_STRING = "<?xml version=\"1.0\" ?><test attrib=\"moretest\">Turn this to JSON</test>";
 
 	public static void main(String[] args) {
-		
+
 		System.out.println("Creating a bucket on Google Cloud Storage...");
-		createBucket("test-buck-1");
+		if (args.length > 0) {
+			createBucket(args[0]);
+		}
 
 		try {
 			JSONObject xmlJSONObj = XML.toJSONObject(TEST_XML_STRING);
